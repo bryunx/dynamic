@@ -15,6 +15,7 @@ export class UserComponent implements OnInit {
   hello:any;
   posts:Post[];
   isEdit:boolean = false;
+  skills:any;
 
   constructor(private dataService:DataService) {
     // console.log('constructor ran..');
