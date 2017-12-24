@@ -1,0 +1,17 @@
+#edit {
+    background-color: #4CAF50;
+}
+
+input {
+    border: 2px solid green;
+    border-radius: 4px;
+}
+
+#x {
+    background-color: rgb(231, 102, 231);
+}
+
+#body {
+    margin-left: 20px;
+    margin-right: 20px;
+}

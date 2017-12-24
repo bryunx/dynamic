@@ -1,58 +1,37 @@
-<h1>{{name}}</h1>
-<ul>
-  <li>Age: {{age}}</li>
-  <li>Email: {{email}}</li>
-  <li>Address: {{address.street}}, {{address.city}}, {{address.state}}</li>
+<div id="body">
+<h3>Built with the latest:</h3>
+<ul *ngFor="let skill of skills; let i = index">{{i+1}}: {{skill}}
 </ul>
 
-<button (click)="onClick()">Click Me</button>
-<button (click)="toggleEdit()">Edit User</button>
+<!-- <button (click)="onClick()">Click Me</button> -->
+<button id="edit"(click)="toggleEdit()">Edit Text</button>
 
 <div *ngIf=isEdit>
-<h1>Edit User</h1>
+<h3>Edit Text</h3>
+<h4>{{name}}</h4>
+
 <form>
   <div>
-    <label for="name">Name:</label>
-    <input type="text" [(ngModel)]="name" name="name">
-  </div>
-  <div>
-      <label for="name">Age:</label>
-      <input type="number" [(ngModel)]="age" name="age">
-  </div>
-  <div>
-      <label for="name">Email:</label>
-      <input type="text" [(ngModel)]="email" name="email">
-  </div>
-  <div>
-      <label for="name">Street:</label>
-      <input type="text" [(ngModel)]="address.street" name="street">
-  </div>
-  <div>
-      <label for="name">City:</label>
-      <input type="text" [(ngModel)]="address.city" name="city">
-    </div>
-  <div>
-        <label for="name">State:</label>
-        <input type="text" [(ngModel)]="address.state" name="state">
+    <label for="name">Type text:</label>
+    <input type='text' [(ngModel)]="name" name="name">
   </div>
 </form>
 </div>
 
-<h1>Hobbies</h1>
+<h3>Hobbies</h3>
 <form (submit)="addHobby(hobby.value)">
   <div>
-    <label for="hobby">Hobby:</label>
+    <label for="hobby">My favorite things to do are:</label>
     <input type='text' #hobby>
   </div>
 </form>
-  <ul>
-    <li *ngFor="let hobby of hobbies; let i = index">{{i+1}}: {{hobby}} 
-      <button (click)="deleteHobby(hobby)">X</button>
-    </li>
+  <ul *ngFor="let hobby of hobbies; let i = index">{{i+1}}: {{hobby}} 
+      <button id="x" (click)="deleteHobby(hobby)">X</button>
   </ul>
 
-  <h1>Posts</h1>
+  <h3>Sample Posts</h3>
   <div *ngFor="let post of posts">
     <h4>{{post.title}}</h4>
     <p>{{post.body}}</p>
+  </div>
   </div>

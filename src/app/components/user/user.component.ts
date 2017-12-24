@@ -17,21 +17,17 @@ export class UserComponent implements OnInit {
   isEdit:boolean = false;
 
   constructor(private dataService:DataService) {
-    console.log('constructor ran..');
+    // console.log('constructor ran..');
   }
 
   ngOnInit() {
-    console.log('ngOnInit ran..');
-    this.name = 'John Doe';
-    this.email = 'test@test.com';
-    this.age = 30;
-    this.address ={
-      street:'50 main st',
-      city:'Boston',
-      state:'MA'
-    }
-    this.hobbies = ['Write code', 'Watch movies', 'Listen to music'];
+    // console.log('ngOnInit ran..');
+    this.name = '';
+    
+    this.hobbies = ['Write code', 'Learn code', 'Debug code'];
     this.hello = 'hello';
+
+    this.skills = ['Node.js', 'Angular.js'];
 
     this.dataService.getPosts().subscribe((posts) => {
       //console.log(posts);
@@ -39,13 +35,13 @@ export class UserComponent implements OnInit {
     });
   }
 
-  onClick(){
-    this.name='Brad Traversy';
-    this.hobbies.push("New Hobby");
-  }
+  // onClick(){
+  //   this.name='';
+  //   this.hobbies.push("New Hobby");
+  // }
 
   addHobby(hobby){
-    console.log(hobby);
+    // console.log(hobby);
     this.hobbies.unshift(hobby);
     return false;
   }
